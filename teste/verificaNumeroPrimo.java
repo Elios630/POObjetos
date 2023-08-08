@@ -4,8 +4,8 @@ class VerificaNumeroPrimo{
 
     static public void main(String args[]){
 
-        //int num = 977;
-
+        System.out.println("informe o numero:");
+        Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         int confirma = verificaNumeroPrimo(num);
         System.out.println(confirma);
