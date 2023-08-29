@@ -16,12 +16,7 @@ public class Estoque {
     }
     
     public void removerObjetoPorId(int id){
-
-        for (Objeto o : this.objetos) {
-            if(o.id == id){
-                o = null;
-            }
-        }
+        objetos.removeIf(objetos -> objetos.id == id);
     }
 
     public String listarObjetos(){
