@@ -50,10 +50,12 @@ public class JuazeiroDAO {
             Query query = session.createQuery("FROM Juazeiro");
             List<Juazeiro> juazeiros = query.getResultList();
 
+            System.out.println("");
             for (Juazeiro juazeiro : juazeiros) {
                 System.out.println("ID: " + juazeiro.getId() + ", Altura: " + juazeiro.getAltura() + ", Profundidade: " + juazeiro.getProfundidade()
                 + ", Espessura: " + juazeiro.getEspessura() + ", Largura: " + juazeiro.getLargura() + ", Família: " + juazeiro.getFamília() + ", Quantidade: " + juazeiro.getQuantidade()
                 + ", nDeEspinhos: " + juazeiro.getnDeEspinhos());
+                System.out.println("");
             }
         } catch (Exception e) {
             if (transaction != null) {

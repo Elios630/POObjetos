@@ -47,11 +47,14 @@ public class AroeiraDAO {
             transaction = session.beginTransaction();
             Query query = session.createQuery("FROM Aroeira");
             List<Aroeira> aroeiras = query.getResultList();
-
+            
+            System.out.println("");
             for (Aroeira aroeira : aroeiras) {
+                
                 System.out.println("ID: " + aroeira.getId() + ", Altura: " + aroeira.getAltura() + ", Profundidade: " + aroeira.getProfundidade()
                 + ", Espessura: " + aroeira.getEspessura() + ", Largura: " + aroeira.getLargura() + ", Família: " + aroeira.getFamília() + ", Quantidade: " + aroeira.getQuantidade()
                 + ", Remédio: " + aroeira.getRemédio());
+                System.out.println("");
             }
         } catch (Exception e) {
             if (transaction != null) {

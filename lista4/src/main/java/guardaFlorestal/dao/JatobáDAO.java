@@ -50,10 +50,12 @@ public class JatobáDAO {
             Query query = session.createQuery("FROM Jatobá");
             List<Jatobá> jatobás = query.getResultList();
 
+            System.out.println("");
             for (Jatobá jatobá : jatobás) {
                 System.out.println("ID: " + jatobá.getId() + ", Altura: " + jatobá.getAltura() + ", Profundidade: " + jatobá.getProfundidade()
                 + ", Espessura: " + jatobá.getEspessura() + ", Largura: " + jatobá.getLargura() + ", Família: " + jatobá.getFamília() + ", Quantidade: " + jatobá.getQuantidade()
                 + ", Remédio: " + jatobá.getRemédio());
+                System.out.println("");
             }
         } catch (Exception e) {
             if (transaction != null) {

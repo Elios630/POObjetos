@@ -17,6 +17,11 @@ public class Main {
     
     public static void main(String[] args) {
 
+        
+        AroeiraDAO aroeiraDAO = new AroeiraDAO();
+        BambuDAO bambuDAO = new BambuDAO();
+        JatobáDAO jatobáDAO = new JatobáDAO();
+        JuazeiroDAO juazeiroDAO = new JuazeiroDAO();
         int escolha, escolhaPrinc;
 
         do {
@@ -79,24 +84,16 @@ public class Main {
 
                         switch (escolha) {
                             case 1:
-                                AroeiraDAO aroeiraDAO = new AroeiraDAO();
                                 aroeiraDAO.ConsultarAroeira();
-                                aroeiraDAO.close();
                                 break;
                             case 2:
-                                BambuDAO bambuDAO = new BambuDAO();
                                 bambuDAO.ConsultarBambu();
-                                bambuDAO.close();
                                 break;
                             case 3:
-                                JatobáDAO jatobáDAO = new JatobáDAO();
                                 jatobáDAO.ConsultarJatobá();
-                                jatobáDAO.close();
                                 break;
                             case 4:
-                                JuazeiroDAO juazeiroDAO = new JuazeiroDAO();
                                 juazeiroDAO.ConsultarJuazeiro();
-                                juazeiroDAO.close();
                                 break;
                             case 5:
                                 break;
@@ -180,6 +177,10 @@ public class Main {
             }
 
         } while (escolhaPrinc != 5);
+        aroeiraDAO.close();
+        bambuDAO.close();
+        jatobáDAO.close();
+        juazeiroDAO.close();
 
     }
 
@@ -208,7 +209,6 @@ public class Main {
         aroeiraDAO.salvarAroeira(aroeira);
 
         System.out.println("Cadastro realizado com sucesso!");
-        aroeiraDAO.close();
     }
                 
     
@@ -237,7 +237,6 @@ public class Main {
         bambuDAO.salvarBambu(bambu);
 
         System.out.println("Cadastro realizado com sucesso!");
-        bambuDAO.close();
     }
                 
     
@@ -267,7 +266,6 @@ public class Main {
         jatobáDAO.salvarJatobá(jatobá);
 
         System.out.println("Cadastro realizado com sucesso!");
-        jatobáDAO.close();
     }
 
                 
@@ -294,7 +292,6 @@ public class Main {
         juazeiroDAO.salvarJuazeiro(juazeiro);
 
         System.out.println("Cadastro realizado com sucesso!");
-        juazeiroDAO.close();
     }
     private static void atualizarAroeira() {
         System.out.println("==== Atualizar Aroeira ====");
@@ -336,8 +333,7 @@ public class Main {
 
         aroeiraDAO.atualizarAroeira(aroeiraEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        aroeiraDAO.close();
+        System.out.println("Atualização realizado com sucesso!");
     }
 
 
@@ -381,8 +377,7 @@ public class Main {
 
         bambuDAO.atualizarBambu(bambuEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        bambuDAO.close();
+        System.out.println("Atualização realizado com sucesso!");
     }
     private static void atualizarJatobá() {
         System.out.println("==== Atualizar Jatobá ====");
@@ -424,8 +419,7 @@ public class Main {
 
         jatobáDAO.atualizarJatobá(jatobáEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        jatobáDAO.close();
+        System.out.println("Atualização realizado com sucesso!");
     }
 
 
@@ -469,8 +463,7 @@ public class Main {
 
         juazeiroDAO.atualizarJuazeiro(juazeiroEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        juazeiroDAO.close();
+        System.out.println("Atualização realizado com sucesso!");
     }
     private static void excluirAroeira() {
         System.out.println("==== Excluir Aroeira ====");
@@ -484,8 +477,7 @@ public class Main {
         
         aroeiraDAO.deletarAroeira(aroeiraEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        aroeiraDAO.close();
+        System.out.println("Exclusão realizado com sucesso!");
     }
 
 
@@ -501,8 +493,7 @@ public class Main {
         
         bambuDAO.deletarBambu(bambuEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        bambuDAO.close();
+        System.out.println("Exclusão realizado com sucesso!");
     }
     private static void excluirJatobá() {
         System.out.println("==== Excluir Jatobá ====");
@@ -516,8 +507,7 @@ public class Main {
         
         jatobáDAO.deletarJatobá(jatobáEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        jatobáDAO.close();
+        System.out.println("Exclusão realizado com sucesso!");
     }
 
 
@@ -533,8 +523,7 @@ public class Main {
         
         juazeiroDAO.deletarJuazeiro(juazeiroEncontrada);
 
-        System.out.println("Cadastro realizado com sucesso!");
-        juazeiroDAO.close();
+        System.out.println("Exclusão realizado com sucesso!");
     }
 
 }

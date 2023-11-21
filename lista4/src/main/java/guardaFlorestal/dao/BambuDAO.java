@@ -1,7 +1,6 @@
 package guardaFlorestal.dao;
 
 import java.util.List;
-
 import javax.persistence.Query;
 
 import org.hibernate.Session;
@@ -48,11 +47,13 @@ public class BambuDAO {
             transaction = session.beginTransaction();
             Query query = session.createQuery("FROM Bambu");
             List<Bambu> bambus = query.getResultList();
-
+            
+            System.out.println("");
             for (Bambu bambu : bambus) {
                 System.out.println("ID: " + bambu.getId() + ", Altura: " + bambu.getAltura() + ", Profundidade: " + bambu.getProfundidade()
                 + ", Espessura: " + bambu.getEspessura() + ", Largura: " + bambu.getLargura() + ", Família: " + bambu.getFamília() + ", Quantidade: " + bambu.getQuantidade()
                 + ", Gênero: " + bambu.getGênero());
+                System.out.println("");
             }
         } catch (Exception e) {
             if (transaction != null) {
