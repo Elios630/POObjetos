@@ -8,9 +8,6 @@ import javax.persistence.Id;
 @Entity
 public class Juazeiro extends Arvore{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     
     private int nDeEspinhos;
 
@@ -21,6 +18,11 @@ public class Juazeiro extends Arvore{
     public void setnDeEspinhos(int nDeEspinhos) {
         this.nDeEspinhos = nDeEspinhos;
     }
+
+
+    public Juazeiro() {
+    }
+
 
     public Juazeiro(int altura, int profundidade, double espessura, int largura, String família, int quantidade, int nDeEspinhos) {
         this.altura = altura;
@@ -36,10 +38,6 @@ public class Juazeiro extends Arvore{
     public String toString() {
         return "Juazeiro [altura=" + altura + "m, profundidade=" + profundidade + "m, espessura=" + espessura + "m, largura="
                 + largura + "m, família=" + família + ", quantidade=" + quantidade + ", numero de espinhos=" + nDeEspinhos + " por ramo]";
-    }
-
-    public Long getId() {
-        return id;
     }
 
 }

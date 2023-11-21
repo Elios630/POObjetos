@@ -8,9 +8,6 @@ import javax.persistence.Id;
 @Entity
 public class Aroeira extends Arvore{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String remédio;
 
@@ -43,10 +40,6 @@ public class Aroeira extends Arvore{
     public String toString() {
         return "Aroeira [altura=" + altura + "m, profundidade=" + profundidade + "m, espessura=" + espessura + "m, largura="
                 + largura + "m, família=" + família + ", quantidade=" + quantidade + ", remédio=" + remédio + "]";
-    }
-
-    public Long getId() {
-        return id;
     }
 
     

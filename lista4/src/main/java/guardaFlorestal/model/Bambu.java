@@ -8,9 +8,6 @@ import javax.persistence.Id;
 @Entity
 public class Bambu extends Arvore{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     
     private String gênero;
 
@@ -21,6 +18,11 @@ public class Bambu extends Arvore{
     public void setGênero(String gênero) {
         this.gênero = gênero;
     }
+
+
+    public Bambu() {
+    }
+
 
     public Bambu(int altura, int profundidade, double espessura, int largura, String família, int quantidade, String gênero) {
         this.altura = altura;
@@ -38,11 +40,6 @@ public class Bambu extends Arvore{
         return "Bambu [altura=" + altura + "m, profundidade=" + profundidade + "m, espessura=" + espessura + "m, largura="
                 + largura + "m, família=" + família + ", quantidade=" + quantidade + ", gênero=" + gênero + "]";
     }
-
-    public Long getId() {
-        return id;
-    }
-
     
     
 }

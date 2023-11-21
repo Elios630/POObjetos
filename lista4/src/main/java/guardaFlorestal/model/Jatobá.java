@@ -9,13 +9,6 @@ import javax.persistence.Id;
 public class Jatobá extends Arvore{
     
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    public Long getId() {
-        return id;
-    }
 
 
     private String remédio;
@@ -27,6 +20,11 @@ public class Jatobá extends Arvore{
     public void setRemédio(String remédio) {
         this.remédio = remédio;
     } 
+
+
+    public Jatobá() {
+    }
+
 
     public Jatobá(int altura, int profundidade, double espessura, int largura, String família, int quantidade, String remédio) {
         this.altura = altura;

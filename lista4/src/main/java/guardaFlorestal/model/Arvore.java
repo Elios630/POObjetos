@@ -1,16 +1,37 @@
 package guardaFlorestal.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
-abstract  class Arvore {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Arvore implements Serializable{
 
-    protected int altura;
-    protected int profundidade;
-    protected double espessura;
-    protected int largura;
-    protected String família;
-    protected int quantidade;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    public int altura;
+    public int profundidade;
+    public double espessura;
+    public int largura;
+    public String família;
+    public int quantidade;
+
+
+    public Long getId() {
+        return this.id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
     public int getAltura() {
         return altura;
